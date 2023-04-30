@@ -14,3 +14,7 @@ module.exports.search = (req, res) => {
 module.exports.inventory = (req, res) => {
     res.render(path.join(__dirname,'..','views','index'), { title: 'Inventory Page' });
 }
+
+module.exports.nextauth = (req, res) => {
+    res.json({x:'x'})
+}
