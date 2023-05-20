@@ -1,4 +1,4 @@
-# Next.js Backend Express Server
+# DinerPro Backend Express Server
 
 This repository contains the backend Express server file for a Next.js project. The frontend code for the project is hosted in a separate repository.
 
@@ -28,10 +28,10 @@ To set up and run the backend server locally, follow these steps:
    npm start
 The server will start running on the specified port (typically 3000 or as configured).
 
-##API Endpoints
+## API Endpoints
 <em>No custom endpoints yet</em>
 
-##Contributing
+## Contributing
 We welcome contributions to improve this backend server or fix any issues. If you would like to contribute, please follow these steps:
 
 <ol type="1">
