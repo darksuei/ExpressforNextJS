@@ -17,8 +17,8 @@ const logger = winston.createLogger({
   transports: [
     new winston.transports.File({ filename: 'logs/server.log' })
   ],
-  level: 'info', // Set the desired log level
-  format: winston.format.json(), // Use JSON format for logs
+  level: 'info',
+  format: winston.format.json(),
 });
 
 //Caching middleware
