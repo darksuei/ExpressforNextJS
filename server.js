@@ -4,12 +4,22 @@ const next = require('next');
 const dotenv = require('dotenv');
 const path = require('path');
 const cache = require('express-cache')
+const winston = require('winston');
 dotenv.config();
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 const port = process.env.PORT || 3000;
+
+// Winston logger
+const logger = winston.createLogger({
+  transports: [
+    new winston.transports.File({ filename: 'logs/server.log' })
+  ],
+  level: 'info', // Set the desired log level
+  format: winston.format.json(), // Use JSON format for logs
+});
 
 //Caching middleware
 const cacheMiddleware = cache({
@@ -31,12 +41,15 @@ app.prepare().then(() => {
 
   // Default Next.js handling
   server.all('*',cacheMiddleware, (req, res) => {
+    logger.info(`> Request: ${req.url}`);
     return handle(req, res);
   });
 
   server.listen(port, (err) => {
     if (err) throw err;
+    logger.info('> Server is running on http://localhost:3000');
     console.log('> Ready on http://localhost:3000');
+
   });
 }).catch((ex) => {
   console.error(ex.stack);
