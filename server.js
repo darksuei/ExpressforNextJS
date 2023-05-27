@@ -2,23 +2,35 @@
 const express = require('express');
 const next = require('next');
 const dotenv = require('dotenv');
+const path = require('path');
+const cache = require('express-cache')
+dotenv.config();
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 const port = process.env.PORT || 3000;
 
+//Caching middleware
+const cacheMiddleware = cache({
+  prefix: 'myapp:', // Prefix for cache keys
+  expire: 60, // Cache expiration time in seconds
+});
+
+//Express Server
 app.prepare().then(() => {
   const server = express();
 
-  // // Custom API endpoints
-  // server.get('/api/users', (req, res) => {
-  //   // Handle the API request
-  //   res.json({ message: 'This is an API endpoint' });
-  // });
+  //Caching static assets
+  server.use(express.static(path.join(__dirname, 'public'),{
+    maxAge: '20d', // Static assests are cached for 20 days
+    immutable: true,
+  }));
+
+  //CUSTOM API ROUTES COME HERE 
 
   // Default Next.js handling
-  server.all('*', (req, res) => {
+  server.all('*',cacheMiddleware, (req, res) => {
     return handle(req, res);
   });
 
