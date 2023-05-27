@@ -1,0 +1,21 @@
+{
+  "name": "dinerpro",
+  "version": "1.0.0",
+  "description": "This repository contains the backend Express server file for a Next.js project. The frontend code for the project is hosted in a separate repository.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Suei43/DinerPro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Suei43/DinerPro/issues"
+  },
+  "homepage": "https://github.com/Suei43/DinerPro#readme"
+}
