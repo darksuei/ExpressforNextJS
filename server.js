@@ -42,9 +42,15 @@ app.prepare().then(() => {
 
   //CUSTOM API ROUTES COME HERE 
 
-  // Default Next.js handling
-  server.all('*',cacheMiddleware, (req, res) => {
+  // Default Next.js route handling
+  server.all('*',cacheMiddleware, (req, res, next) => {
     logger.info(`> Request: ${req.url}`);
+
+    if(err){
+      logger.error(`> Error: ${err}`);
+      return next(err);
+    }
+
     return handle(req, res);
   });
 
