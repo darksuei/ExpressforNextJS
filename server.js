@@ -30,7 +30,7 @@ const cacheMiddleware = cache({
   expire: 60, // Cache expiration time in seconds
 });
 
-//Express Server
+//Server
 app.prepare().then(() => {
   const server = express();
 
@@ -58,7 +58,6 @@ app.prepare().then(() => {
     if (err) throw err;
     logger.info('> Server is running on http://localhost:3000');
     console.log('> Ready on http://localhost:3000');
-
   });
 }).catch((ex) => {
   console.error(ex.stack);
