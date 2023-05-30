@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const path = require('path');
 const cache = require('express-cache')
 const winston = require('winston');
+const errorMiddleware = require('./errorMiddleware');
 dotenv.config();
 
 const dev = process.env.NODE_ENV !== 'production';
