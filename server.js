@@ -13,6 +13,8 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 const port = process.env.PORT || 3000;
 
+app.use(errorMiddleware);
+
 // Winston logger
 const logger = winston.createLogger({
   transports: [
