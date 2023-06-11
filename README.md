@@ -8,7 +8,7 @@ The Express backend server file in this repository provides API endpoints and se
 
 Please note that this repository only contains the backend server file. The frontend code, including React components, pages, styles, and other frontend-related files, is located in a separate repository. 
 
-## Prerequisites
+## Requirements
 
 Before running the backend server, ensure that you have the following prerequisites set up:
 
