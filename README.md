@@ -32,13 +32,13 @@ The server will start running on the specified port (typically 3000 or as config
 <em>No custom endpoints yet</em>
 
 ## Contributing
-We welcome contributions to improve this backend server or fix any issues. If you would like to contribute, please follow these steps:
+We are open to contributions to improve this project or fix any issues. If you would like to contribute, please follow these steps:
 
 <ol type="1">
 <li>Fork the repository.</li>
 <li>Create a new branch for your changes.</li>
 <li>Make your modifications and commit them with descriptive messages.</li>
 <li>Push your changes to your forked repository.</li>
-<li>Open a pull request, detailing the changes you made.</li>
+<li>Open a pull request, detailing all the changes you made.</li>
 </ol>
 
