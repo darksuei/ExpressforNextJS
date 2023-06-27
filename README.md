@@ -1,4 +1,4 @@
-# DinerPro Backend Server
+# DinerPro Server
 
 This repository contains the backend Express server file for a Next.js project. The frontend code for the project is hosted in a separate repository.
 
